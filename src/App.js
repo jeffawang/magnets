@@ -1,23 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Draggable from 'react-draggable'
+
+const fridgeStyle = {
+  position: 'relative',
+  height: '500px',
+  backgroundColor: '#ddd',
+  boxShadow: 'inset 0px 0px 10px 3px #999'
+}
+
+const magnetStyle = {
+  position: 'absolute',
+  display: 'inline-block',
+  backgroundColor: 'white',
+  padding: '5px',
+  border: '1px solid black',
+  borderBottom: '3px solid black',
+}
+
+const Magnet = ({left, top, word}) => {
+  return <Draggable bounds="parent" defaultPosition={{x: left, y: top}}>
+    <div style={{...magnetStyle}}>{word}</div>
+  </Draggable>
+}
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{padding: "30px"}}>
+      <div style={fridgeStyle}>
+        <Magnet left={10} top={20} word="hello" />
+        <Magnet left={100} top={66} word="world" />
+        <Magnet left={50} top={200} word="RC" />
+      </div>
     </div>
   );
 }
