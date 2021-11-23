@@ -5,7 +5,7 @@ import Draggable from 'react-draggable'
 
 const fridgeStyle = {
   position: 'relative',
-  height: '500px',
+  height: '300px',
   backgroundColor: '#ddd',
   boxShadow: 'inset 0px 0px 10px 3px #999'
 }
@@ -31,7 +31,11 @@ function App() {
       <div style={fridgeStyle}>
         <Magnet left={10} top={20} word="hello" />
         <Magnet left={100} top={66} word="world" />
-        <Magnet left={50} top={200} word="RC" />
+        <Magnet left={50} top={200} word="(" />
+        <Magnet left={80} top={160} word=")" />
+        <Magnet left={120} top={30} word="print" />
+        <Magnet left={10} top={100} word='"' />
+        <Magnet left={100} top={200} word='"' />
       </div>
     </div>
   );
